@@ -1,5 +1,6 @@
 Organização do código e o motivo:
 
+```plaintext
 /
 ├── node_modules/         # Dependências (gerenciado pelo npm)
 ├── public/               # Arquivos estáticos acessados diretamente pelo navegador (ex: imagens, favicon, fontes), dá para fazer um apenas para fonts
@@ -18,3 +19,4 @@ Organização do código e o motivo:
 ├── package.json
 ├── package-lock.json
 └── README.md             # Documentação do projeto
+```
