@@ -1,0 +1,23 @@
+.capa_principal{
+    /* A medida vh é igual a 1/100 da altura da viewport
+        se a altura do navegador é 900px, 1vh equivale a 9px
+    */
+    height: 60vh;  
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-size: cover;  /*  background opucar todo o espaco */
+    background-image: url('../../../public/images/pokemon.png');
+    background-position: top; /* ajustar a posicao da imagem */
+    background-repeat: no-repeat; /* nao deixar repetir a mesma tbm */
+}
+
+#pesquisar{
+    padding: 10px 20px;
+    width: 50vh;
+    height: 4vh;
+    border-radius: 50px;
+    outline: 0;
+    border: none;
+}
