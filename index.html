@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="src/assets/css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/public/icons/pokemon_icon.png">
-    <title>Home</title>
-</head>
-<body>
-    <!--  Extends do cabecalho -->
-        <main>
+
+<title>Home</title>
+<section id="extends-header"></section>
+    <main>
             <div class="capa_principal">
                     <input type="text" name="pesquisar" id="pesquisar">
             </div>
-            <div>
-                continuação
-                <h1>Lista de Regiões Pokémon</h1>
-                <ul id="region-list"></ul>
-            </div>
-        </main>
-        <script src="src/assets/js/regioes.js" ></script>
-</body>
-</html>
+            <div class="select-region" id="select-region"></div>
+            <div id="region-list"></div>
+    </main>
+<section id="extends-footer"></section>
+
+
+<script src="src/app.js"></script>
+<script src="src/assets/js/regioes.js" ></script>
