@@ -10,16 +10,20 @@ async function carregarTemplatesRegioes() {
 
     let x = 1;
     dados.results.forEach(regiao => {
-        let div_container = document.createElement('div');
+        //container das regioes
+        let div_container = document.createElement('a');
+        div_container.href = `/src/views/pokedex.html?regiao=${regiao.name}`;
         lista.append(div_container);
 
         let div_text = document.createElement('div');
-        div_text.textContent = regiao.name.toUpperCase();
+        div_text.classList.add("text-container");
+        div_text.textContent = regiao.name;
         
         div_container.classList.add('container_regiao');
         div_container.id = `${regiao.name}`;
 
         let div_img = document.createElement('div');
+        div_img.classList.add("img-container");
 
         if(x % 2){
             div_container.classList.add('bg-color-black');
@@ -30,16 +34,10 @@ async function carregarTemplatesRegioes() {
             div_container.append(div_img)
             div_container.append(div_text);
         }
-
-        div_text.classList.add("text-container");
-        div_img.classList.add("img-container");
-
-        
         x++;
     });
 }
 
-carregarTemplatesRegioes();
 
 async function selectRegioes(){
     const dados = await regioes();
@@ -54,4 +52,5 @@ async function selectRegioes(){
     });
 }
 
+carregarTemplatesRegioes();
 selectRegioes();
