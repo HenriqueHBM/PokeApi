@@ -7,11 +7,44 @@
     text-align: center;
 }
 
+#tipo-list{
+    padding: 10px;
+}
+
 .container_tipo{
     margin-bottom: 10px;
-    padding: 20px;
-    height: 50vh;
-    display:flex;
-    margin: 0;
-    background-color: aqua;
+    background-color: rgba(197, 197, 197, 0.891);
+}
+
+.header_tipo{
+    background-color: rgb(52, 96, 58);
+    color: white;
+    justify-content: center;
+    text-transform: uppercase;
+    padding: 15px;
+}
+
+.body_tipo{
+    padding: 10px;
+    display: flex;
+}
+.card_pokemon{
+    justify-content: space-between;
+    padding:5px;
+    height: 45vh;
+    width: 43vh;
+    margin-inline: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card_tipo_vazio{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(200, 200, 200, 0.681);
+    border-radius: 10px;
+    padding:5px;
+    height: 45vh;
 }
