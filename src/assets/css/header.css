@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Orbitron", sans-serif;
+}
+
+.interface {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    padding: 15px 0;
+    background-color: white;
+}
+
+header .interface {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+/* Logo */
+header .logo img {
+    max-width: 50px;
+    justify-self: start;
+}
+
+/* Barra de pesquisa */
+header #pesquisar {
+    padding: 10px 20px 10px 45px;
+    width: 90vh;
+    height: 6vh;
+    border-radius: 50px;
+    outline: 0;
+    background-color: #f5f5f5;
+    border: none;
+
+    background-image: url('https://cdn-icons-png.flaticon.com/512/622/622669.png'); /* ícone lupa */
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+
+    justify-self: center;
+}
+
+/* Menu */
+header .menu-desktop nav ul {
+    list-style-type: none;    
+    text-align: right;
+}
+
+header .menu-desktop nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+header .menu-desktop nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}
