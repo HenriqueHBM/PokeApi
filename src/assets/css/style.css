@@ -2,6 +2,10 @@
 *{
     margin: 0;
 }
+
+main{
+    height: 100%;
+}
 .capa_principal{
     /* A medida vh é igual a 1/100 da altura da viewport
         se a altura do navegador é 900px, 1vh equivale a 9px
