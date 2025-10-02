@@ -29,6 +29,8 @@
     display: flex;
 }
 .card_pokemon{
+    display: flex;
+    flex: 1;
     justify-content: space-between;
     padding:5px;
     height: 45vh;
