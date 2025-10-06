@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+
 
 footer{
     background-color: #222222;
@@ -6,7 +6,6 @@ footer{
     margin: 0;
     padding: 2rem 0 0 0 ;
     color: #FFFFFF;
-    font-family: "Goldman";
     display: flex;
     flex-direction: column;
     align-items: center;
