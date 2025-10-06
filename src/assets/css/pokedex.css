@@ -28,16 +28,22 @@
     padding: 10px;
     display: flex;
 }
-.card_pokemon{
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    padding:5px;
-    height: 45vh;
+
+.card_pokemon > * {
     width: 43vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.link-card{
+    color: black;
+}
+
+.card_pokemon{
+    height: 45vh;
     margin-inline: 15px;
     border-radius: 20px;
-    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card_tipo_vazio{
