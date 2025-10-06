@@ -75,14 +75,19 @@ async function carregarTemplateTipos() {
         //setando um texto para essas variaveis
         div_header_tipo.innerText = tipo_poke.name;
 
-        const asldfkasld = await listarPokemonRegiaoTipo(tipo_poke.name, regiao);
-        asldfkasld.forEach(poke => {
+        const lista_pokemons = await listarPokemonRegiaoTipo(tipo_poke.name, regiao);
+        lista_pokemons.forEach(poke => {
             div_body_tipo.innerHTML += `
                 <a class='card_pokemon' href='/src/views/pokemon.html?id=${poke.id}'>
-                    ${poke.name}
+                    <div>
+                        <img src='/public/images/pikachu.webp' width='100%' style='border-radius: 20px' />
+                    </div>
+                    <div class='link-card'>
+                        ${poke.name}
+                    </div>
                 </a>`
         })
-        if (asldfkasld.length == 0) {
+        if (lista_pokemons.length == 0) {
             let div_card_vazio = document.createElement('div');
             div_card_vazio.classList.add("card_tipo_vazio");
             div_card_vazio.innerText = "SEM POKÉMON'S DESSE TIPO E REGIÃO"
