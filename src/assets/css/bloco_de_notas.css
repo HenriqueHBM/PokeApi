@@ -16,3 +16,27 @@ h2{
     align-items: center;
 }
 
+.cardpokemon > * {
+    width: 43vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.cardpokemon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 45vh;
+    width: 45vh;
+    border-radius: 20px;
+    margin: 2rem;
+    padding: 0%;
+    background-color: bisque;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.cardpokemon > img{
+    height: 35vh;
+    width: 100%;
+    border-radius: 20px;
+}
