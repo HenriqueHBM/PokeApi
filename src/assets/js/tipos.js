@@ -49,55 +49,106 @@ async function listarPokemonRegiaoTipo(tipo, regiao) {
     return pokemonsRegiao.filter(p => idsTipo.has(p.id));
 }
 
-
+const PAGE_SIZE = 4;
 async function carregarTemplateTipos() {
     const tipos = await tiposPoke();
     const lista = document.getElementById("tipo-list");
 
     for (const tipo_poke of tipos) {
         //declarando uma variavel que esta recebendo a regiao pela url do navegador
-        let params = new URLSearchParams(document.location.search);
-        let regiao = params.get("regiao");
+        const params = new URLSearchParams(document.location.search);
+        const regiao = params.get("regiao");
 
         //console.log(await listarPokemonRegiaoTipo(tipo_poke.name));
 
         //declarando variaveis que estao recebendo uma div
-        let div_container_tipo = document.createElement('div');
-        let div_header_tipo = document.createElement('div');
-        let div_body_tipo = document.createElement("div");
+        const div_container_tipo = document.createElement('div');
+        const div_header_tipo = document.createElement('div');
+        const div_body_tipo = document.createElement("div");
+        const btn_prev = document.createElement('button');
+        const btn_next = document.createElement("button");
 
 
         //passando uma classe para essas variaveis
-        div_header_tipo.classList.add("header_tipo");
         div_container_tipo.classList.add('container_tipo');
+        div_header_tipo.classList.add("header_tipo");
         div_body_tipo.classList.add("body_tipo");
+        btn_prev.classList.add('btn_prev');
+        btn_next.classList.add('btn_next');
+
+        const img_prev = document.createElement('img');
+        const img_next = document.createElement('img');
+
+        img_prev.src = `/public/icons/prev_icon.png`;
+        img_next.src = `/public/icons/next_icon.png`;
+
+        img_prev.classList.add('icon_btn_card')
+        img_next.classList.add('icon_btn_card')
+        btn_prev.classList.add('btn_card');
+        btn_next.classList.add('btn_card');
+
+        btn_prev.appendChild(img_prev);
+        btn_next.appendChild(img_next);
 
         //setando um texto para essas variaveis
         div_header_tipo.innerText = tipo_poke.name;
+        div_header_tipo.append(btn_prev, btn_next);
 
+        let page = 0;
         const lista_pokemons = await listarPokemonRegiaoTipo(tipo_poke.name, regiao);
-        lista_pokemons.forEach(poke => {
-            div_body_tipo.innerHTML += `
-                <a class='card_pokemon' href='/src/views/pokemon.html?id=${poke.id}'>
-                    <div>
-                        <img src='/public/images/pikachu.webp' width='100%' style='border-radius: 20px' />
-                    </div>
-                    <div class='link-card'>
-                        ${poke.name}
-                    </div>
-                </a>`
-        })
-        if (lista_pokemons.length == 0) {
-            let div_card_vazio = document.createElement('div');
-            div_card_vazio.classList.add("card_tipo_vazio");
-            div_card_vazio.innerText = "SEM POKÉMON'S DESSE TIPO E REGIÃO"
-            div_body_tipo.append(div_card_vazio);
+        const total_pagina = Math.max(1, Math.ceil(lista_pokemons.length / PAGE_SIZE));
+
+        function carregarCards(){
+            const ini = page * PAGE_SIZE; // 0
+            const fim = ini + PAGE_SIZE;  // 4
+            const limit_pokemon_carrossel = lista_pokemons.slice(ini, fim); // lista dos pokemons sendo cortada, ini e fim das qtde a mostrar
+
+            div_body_tipo.innerHTML = "";
+
+            if(limit_pokemon_carrossel.length == 0){
+                const div_card_vazio = document.createElement('div');
+                div_card_vazio.classList.add("card_tipo_vazio");
+                div_card_vazio.innerText = "SEM POKÉMON'S DESSE TIPO E REGIÃO"
+                div_body_tipo.append(div_card_vazio);
+            }else{
+                limit_pokemon_carrossel.forEach(poke => {
+                    const card_a = document.createElement("a");
+                    card_a.className = "card_pokemon";
+                    card_a.href = `/src/views/pokemon.html?id=${poke.id}`;
+                    card_a.innerHTML = `
+                        <div>
+                            <img src='/public/images/pikachu.webp' width='100%' style='border-radius: 20px' />
+                        </div>
+                        <div class='link-card'>
+                            ${poke.name}
+                        </div>
+                    `;
+                    div_body_tipo.appendChild(card_a);
+                });
+            }
+            btn_prev.disabled = page == 0; // caso contador esteja com 0 disabilita o botao
+            btn_next.disabled = page >= total_pagina - 1; // caso o total por pagina tenha menos que o contador, desabilita o botao
         }
+
+        btn_prev.addEventListener("click", () => { 
+            // caso o contador(no caso), tenha mais que 0, deixa subtrair
+            if(page > 0){
+                page--;
+                carregarCards();
+            }
+        });
+
+        btn_next.addEventListener("click", () => {
+            if(page <= total_pagina){ // caso o contador seja meno que a quantidade, deixa acrescentar 
+                page++;
+                carregarCards();
+            }
+        });
 
         //append dessas variaveis
         lista.append(div_container_tipo);
-        div_container_tipo.append(div_header_tipo);
-        div_container_tipo.append(div_body_tipo);
+        div_container_tipo.append(div_header_tipo, div_body_tipo);
+        carregarCards(); // inicializando a primeira vez
     };
 }
 
