@@ -27,12 +27,14 @@
 .body_tipo{
     padding: 10px;
     display: flex;
+    justify-content: space-evenly;
 }
 
 .card_pokemon > * {
     width: 43vh;
     text-align: center;
     text-transform: uppercase;
+    border-radius: 20px
 }
 
 .link-card{
@@ -55,4 +57,15 @@
     border-radius: 10px;
     padding:5px;
     height: 45vh;
+}
+
+.icon_btn_card{
+    width: 2.5vh;
+    padding: 2px;
+    margin: 5px;
+}
+
+.btn_card{
+    width: 5vh;
+    margin-inline: 10px;
 }
