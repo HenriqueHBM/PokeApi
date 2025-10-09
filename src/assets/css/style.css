@@ -2,6 +2,10 @@
 *{
     margin: 0;
 }
+
+main{
+    height: 100%;
+}
 .capa_principal{
     /* A medida vh é igual a 1/100 da altura da viewport
         se a altura do navegador é 900px, 1vh equivale a 9px
@@ -66,6 +70,7 @@
 .text-link-region:hover{
     text-shadow: 0 0 1px 0 rgb(255, 255, 255), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
 }
+
 :root{
     --normal-h:#8C8C6A; --normal-c:#CFCFAD; --normal-b:#E8E8D5;
     --fire-h:#B94E14;   --fire-c:#F3B58E;   --fire-b:#FAD8C2;
