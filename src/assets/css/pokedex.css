@@ -14,18 +14,34 @@
 .container_tipo{
     margin-bottom: 10px;
     background-color: rgba(197, 197, 197, 0.891);
+    border-radius: 20px;
+}
+
+.text_tipo{
+    text-align: center;
+    letter-spacing: 10px;
+    margin-left: 12px;
+}
+
+.icon_tipo{
+    justify-content: center;
+    text-align: center;
 }
 
 .header_tipo{
-    background-color: rgb(52, 96, 58);
+    background-color: rgb(24, 68, 30);
     color: white;
     justify-content: center;
     text-transform: uppercase;
-    padding: 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px 20px 0 0;
 }
 
 .body_tipo{
-    padding: 10px;
+    padding: 20px 5px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -38,6 +54,7 @@
 }
 
 .link-card{
+    margin-top: 5px;
     color: black;
 }
 
@@ -45,7 +62,13 @@
     height: 45vh;
     margin-inline: 15px;
     border-radius: 20px;
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #E9ECF5;
+}
+
+.card_pokemon:hover{
+    transform: scale(1.03);
+    transition: transform 200ms ease-in-out;
 }
 
 .card_tipo_vazio{
@@ -68,12 +91,31 @@
 .btn_card{
     width: 5vh;
     margin-inline: 10px;
+    border-radius: 50px;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgba(255, 0, 0, 0);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.btn_card:hover{
+    transform: scale(1.03);
+    box-shadow: 0 5px 10px rgba(94, 94, 94, 0.459);
+    transition: transform 200ms ease-in-out;
+}
+
+.img_icon_tipo{
+    border-radius: 50px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
 }
 main {
-  flex-grow: 1;
+    flex-grow: 1;
 } 

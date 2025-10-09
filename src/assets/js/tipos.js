@@ -71,13 +71,14 @@ async function carregarTemplateTipos() {
 
         //passando uma classe para essas variaveis
         div_container_tipo.classList.add('container_tipo');
-        div_header_tipo.classList.add("header_tipo");
-        div_body_tipo.classList.add("body_tipo");
+        div_header_tipo.classList.add("header_tipo", `header_cor_tipo_${tipo_poke.name}`);
+        div_body_tipo.classList.add("body_tipo", `body_cor_tipo_${tipo_poke.name}`);
         btn_prev.classList.add('btn_prev');
         btn_next.classList.add('btn_next');
 
         const img_prev = document.createElement('img');
         const img_next = document.createElement('img');
+        const div_tipo_icon = document.createElement('div');
 
         img_prev.src = `/public/icons/prev_icon.png`;
         img_next.src = `/public/icons/next_icon.png`;
@@ -86,13 +87,21 @@ async function carregarTemplateTipos() {
         img_next.classList.add('icon_btn_card')
         btn_prev.classList.add('btn_card');
         btn_next.classList.add('btn_card');
+        div_tipo_icon.classList.add('div_text_type')
 
         btn_prev.appendChild(img_prev);
         btn_next.appendChild(img_next);
 
+        div_tipo_icon.innerHTML = `
+            <div class='icon_tipo'>    
+                <img src='/public/icons/icons_tipo/${tipo_poke.name}.svg' width='35rem' height='35rem' class='img_icon_tipo' />
+            </div>
+            <div class='text_tipo'>${tipo_poke.name} <div>
+        `;
         //setando um texto para essas variaveis
-        div_header_tipo.innerText = tipo_poke.name;
-        div_header_tipo.append(btn_prev, btn_next);
+        div_header_tipo.append(btn_prev);
+        div_header_tipo.appendChild(div_tipo_icon);
+        div_header_tipo.append(btn_next);
 
         let page = 0;
         const lista_pokemons = await listarPokemonRegiaoTipo(tipo_poke.name, regiao);
@@ -113,14 +122,15 @@ async function carregarTemplateTipos() {
             }else{
                 limit_pokemon_carrossel.forEach(poke => {
                     const card_a = document.createElement("a");
-                    card_a.className = "card_pokemon";
+                    card_a.classList.add("card_pokemon", `card_cor_tipo_${tipo_poke.name}`);
                     card_a.href = `/src/views/pokemon.html?id=${poke.id}`;
                     card_a.innerHTML = `
                         <div>
                             <img src='/public/images/pikachu.webp' width='100%' style='border-radius: 20px' />
                         </div>
                         <div class='link-card'>
-                            ${poke.name}
+                            <span class='text-link-card'>#${poke.id}</span> <br>
+                            <span class='text-link-card'>${poke.name}</span>
                         </div>
                     `;
                     div_body_tipo.appendChild(card_a);
