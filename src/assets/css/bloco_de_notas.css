@@ -20,6 +20,7 @@ h2{
     width: 43vh;
     text-align: center;
     text-transform: uppercase;
+    
 }
 
 .cardpokemon{
@@ -33,10 +34,17 @@ h2{
     padding: 0%;
     background-color: bisque;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+    
 
 }
 .cardpokemon > img{
-    height: 35vh;
+    height: 100%;
     width: 100%;
     border-radius: 20px;
+    position: relative;
+}
+
+#card_pokemon{
+    display: flex;
 }
