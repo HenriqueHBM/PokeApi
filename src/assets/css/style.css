@@ -91,3 +91,8 @@ main{
     --steel-h:#5A8EA2;  --steel-c:#CFCFE0;  --steel-b:#8EBACBCF;
     --fairy-h:#EC8FE6;  --fairy-c:#F0B9D6;  --fairy-b:#E9C6E7CF;
 }
+
+
+#extends-header{
+    padding: 0;
+}
