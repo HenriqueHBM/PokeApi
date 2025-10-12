@@ -45,27 +45,34 @@
     display: flex;
     justify-content: space-evenly;
     border-radius: 0 0 20px 20px;
+    
 }
 
 .card_pokemon > * {
-    width: 43vh;
+    /* width: 43vh; */
     text-align: center;
     text-transform: uppercase;
     border-radius: 20px
+}
+.card_pokemon {
+    display: block;
 }
 
 .link-card{
     margin-top: 5px;
     color: black;
+    height: 20%;
 }
 
 .card_pokemon{
-    height: 45vh;
+    height: 100%;
+    width: 20%;
     margin-inline: 15px;
     border-radius: 20px;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: #E9ECF5;
     text-decoration: none;
+    padding: 15px 0;
 }
 
 .card_pokemon:hover{
@@ -127,7 +134,9 @@ main {
     letter-spacing: 6px;
 }
 
-
+.link-card-img{
+    height: 80%;
+}
 
 /* NORMAL */
 .header_cor_tipo_normal{ background-color: var(--normal-h); }

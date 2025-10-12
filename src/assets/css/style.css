@@ -10,7 +10,7 @@ main{
     /* A medida vh é igual a 1/100 da altura da viewport
         se a altura do navegador é 900px, 1vh equivale a 9px
     */
-    height: 60vh;  
+    height: 50vh;  
     width: 100%;
     display: flex;
     justify-content: center;
@@ -33,7 +33,7 @@ main{
 
 .container_regiao{
     margin-bottom: 10px;
-    height: 50vh;
+    height: 40vh;
     display:flex;
 }
 

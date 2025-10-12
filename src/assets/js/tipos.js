@@ -125,7 +125,7 @@ async function carregarTemplateTipos() {
                     card_a.classList.add("card_pokemon", `card_cor_tipo_${tipo_poke.name}`);
                     card_a.href = `/src/views/pokemon.html?id=${poke.id}`;
                     card_a.innerHTML = `
-                        <div>
+                        <div class='link-card-img'>
                             <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke.id}.png' width='100%' height='260rem' style='border-radius: 20px' />
                         </div>
                         <div class='link-card'>
