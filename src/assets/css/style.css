@@ -1,5 +1,8 @@
 @import url('/src/assets/css/pokedex.css');
 @import url('/src/assets/css/regioes.css');
+@import url('/src/assets/css/footer.css');
+@import url('/src/assets/css/bloco_de_notas.css');
+@import url('/src/assets/css/header.css');
 *{
     margin: 0;
 }
