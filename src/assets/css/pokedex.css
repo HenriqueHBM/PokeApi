@@ -3,19 +3,19 @@
     padding: 20px;
     text-transform: uppercase;
     color: aliceblue;
-    background-color: black;
+    background-color: rgb(9, 15, 45);
     text-align: center;
 }
 
 #tipo-list{
-    padding: 10px;
+    padding: 3% 10%;
 }
 
 .container_tipo{
-    margin-bottom: 15px;
+    margin-bottom: 2%;
     background-color: rgba(197, 197, 197, 0.891);
     border-radius: 20px;
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.418), 0 6px 20px 0 rgba(0, 0, 0, 0.418);
 }
 
 .text_tipo{
@@ -131,8 +131,8 @@ main {
 } 
 
 .text-link-card{
-    font-size: 1.2rem;
-    letter-spacing: 6px;
+    font-size: 1rem;
+    letter-spacing: 2px;
 }
 
 .link-card-img{

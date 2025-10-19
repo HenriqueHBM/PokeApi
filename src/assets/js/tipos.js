@@ -2,9 +2,9 @@ async function tiposPoke() {
     // pegar a regiao
     const resposta = await fetch("https://pokeapi.co/api/v2/type/");
     const dados = await resposta.json();
-    //removendo os typos[desconhechido e sombra]
+    //removendo os typos[desconhechido, sombra e stellar]
     const tiposValidos = dados.results.filter(
-        t => !["unknown", "shadow"].includes(t.name)
+        t => !["unknown", "shadow", 'stellar'].includes(t.name)
     );
     return tiposValidos;
 }
@@ -129,7 +129,7 @@ async function carregarTemplateTipos() {
                             <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke.id}.png' width='100%' height='260rem' style='border-radius: 20px' />
                         </div>
                         <div class='link-card'>
-                            <span class='text-link-card'>#${poke.id}</span> <br>
+                            <span class='text-link-card'><b>#${poke.id}</b></span> <br>
                             <span class='text-link-card'>${poke.name}</span>
                         </div>
                     `;
@@ -162,34 +162,21 @@ async function carregarTemplateTipos() {
     };
 }
 
+
+//funcao que troca os pokemons com base no que tem na url e seta o select com o mesmo
+function atualiza_select_regiao(){
+    const select = document.getElementById('input_select_region');
+    const params = new URLSearchParams(document.location.search);
+    //setanto o select com a regiao da url
+    select.value = params.get('regiao');
+    //event para quando trocado a opcao no select
+    select.addEventListener('change', function(e){
+        //setando na url a nova regiao
+        params.set('regiao', select.value);
+        //atualiza de fato a url com os parametros
+        window.location.search = params;
+    })
+}
+
+atualiza_select_regiao();
 carregarTemplateTipos();
-
-
-const regioes_tipos = [
-    {
-        id: 1, regiao: 'Kanto', tipo: [
-            {
-                tipo_poke: 'inseto', pokemons: [
-                    { nome: 'Caterpie', numero: '010' }
-                ]
-            }
-        ]
-    },
-    {
-        id: 2, regiao: 'Johto', tipo: [
-            {
-                tipo_poke: 'inseto', pokemons: [
-                    { nome: 'Caterpie', numero: '010' }
-                ]
-            }
-        ]
-    }
-]
-
-/*
-const listar_regioes = JSON.stringify(regioes_tipos);
-const listar_regioes_parse = JSON.parse(listar_regioes);
-
-console.log(listar_regioes);
-console.log(listar_regioes_parse);
-*/

@@ -17,7 +17,7 @@
 header {
     width: 100%;
     padding: 0;
-    background-color: #FDFFFC;
+    background-color: antiquewhite;
 }
 
 header .interface {
@@ -63,11 +63,19 @@ header .menu-desktop nav ul li {
     margin: 0 10px;
 }
 
-header .menu-desktop nav ul li a {
+
+.txt-header-nav{
     color: black;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
+    letter-spacing: 3px;
+}
+
+.txt-header-nav:hover{
+    color: rgb(152, 0, 0);
+    transform: scale(1.1);
+    transition: transform 200ms ease-in-out;
 }
 
 .menu-desktop{
