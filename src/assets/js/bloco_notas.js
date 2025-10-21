@@ -1,20 +1,20 @@
-const pokemons = [
+/*const pokemons = [
   { id: '025', name: 'pikachu', image: '/public/images/pikachu.webp' },
   { id: '001', name: 'bulbasaur', image: '/public/images/pikachu.webp' },
   { id: '001', name: 'bulbasaur', image: '/public/images/pikachu.webp' },
   { id: '001', name: 'bulbasaur', image: '/public/images/pikachu.webp' },
   { id: '001', name: 'bulbasaur', image: '/public/images/pikachu.webp' }
   // ...
-];
+];*/
 
-function carregarNotas(){
+function carregarNotas(nome){
 
 const container = document.getElementById('card_pokemon');
 
 
 container.innerHTML = ''; // limpa o container
 
-pokemons.forEach(pokemon => {
+nome.forEach(pokemon => {
   const card = document.createElement('div');
   card.classList.add('cardpokemon');
 
@@ -42,10 +42,4 @@ pokemons.forEach(pokemon => {
 
 }
 
-carregarNotas()
-
-localStorage.setItem("salvo", JSON.stringify(pokemons));
-
-const recuperado = JSON.parse(localStorage.getItem("salvo"));
-
-console.log(recuperado);
+carregarNotas(JSON.parse(localStorage.getItem("salvo")))
