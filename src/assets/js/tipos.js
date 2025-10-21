@@ -106,7 +106,6 @@ async function carregarTemplateTipos() {
         let page = 0;
         const lista_pokemons = await listarPokemonRegiaoTipo(tipo_poke.name, regiao);
         const total_pagina = Math.max(1, Math.ceil(lista_pokemons.length / PAGE_SIZE));
-
         function carregarCards(){
             const ini = page * PAGE_SIZE; // 0
             const fim = ini + PAGE_SIZE;  // 4
@@ -145,6 +144,7 @@ async function carregarTemplateTipos() {
             if(page > 0){
                 page--;
                 carregarCards();
+                document.getElementById(`prev_pagination_${tipo_poke.name}`).innerText = page + 1;
             }
         });
 
@@ -152,12 +152,20 @@ async function carregarTemplateTipos() {
             if(page <= total_pagina){ // caso o contador seja meno que a quantidade, deixa acrescentar 
                 page++;
                 carregarCards();
+                document.getElementById(`prev_pagination_${tipo_poke.name}`).innerText = page + 1;
             }
         });
 
         //append dessas variaveis
         lista.append(div_container_tipo);
-        div_container_tipo.append(div_header_tipo, div_body_tipo);
+        const div_foot_tipo = document.createElement('div');
+        div_foot_tipo.classList.add('footer-tipo', `header_cor_tipo_${tipo_poke.name}`)
+        div_foot_tipo.innerHTML = `
+            <span id='prev_pagination_${tipo_poke.name}'> ${page + 1 } </span>
+            <span>de</span>
+            <span id='next_pagination_${tipo_poke.name}'> ${total_pagina} </span>
+        `;
+        div_container_tipo.append(div_header_tipo, div_body_tipo, div_foot_tipo);
         carregarCards(); // inicializando a primeira vez
     };
 }
