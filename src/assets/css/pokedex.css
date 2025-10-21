@@ -5,6 +5,10 @@
     color: aliceblue;
     background-color: rgb(9, 15, 45);
     text-align: center;
+    margin: 0;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.418), 0 6px 20px 0 rgba(0, 0, 0, 0.418);
 }
 
 #tipo-list{
@@ -45,7 +49,6 @@
     padding: 20px 5px;
     display: flex;
     justify-content: space-evenly;
-    border-radius: 0 0 20px 20px;
     
 }
 
@@ -137,6 +140,13 @@ main {
 
 .link-card-img{
     height: 80%;
+}
+
+.footer-tipo{
+    text-align: center;
+    padding: 0.7%;
+    border-radius: 0 0 20px 20px;
+    color: white;
 }
 
 /* NORMAL */
