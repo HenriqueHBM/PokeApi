@@ -4,38 +4,41 @@ async function regioes(){
     return dados;
 }
 
+async function txt_regiao(regiao) {
+    const response = await fetch(`/src/assets/txt/${regiao}.txt`);
+    const text = await response.text();
+    return text;
+}
+
 async function carregarTemplatesRegioes() {
     const dados = await regioes();
-    const lista = document.getElementById("region-list");
 
-    let x = 1;
     dados.results.forEach(regiao => {
-        //container das regioes
-        let div_container = document.createElement('a');
-        div_container.href = `/src/views/pokedex.html?regiao=${regiao.name}`;
-        lista.append(div_container);
-
-        let div_text = document.createElement('div');
-        div_text.classList.add("text-container");
-        div_text.textContent = regiao.name;
-        
-        div_container.classList.add('container_regiao');
-        div_container.id = `${regiao.name}`;
-
-        let div_img = document.createElement('div');
-        div_img.classList.add("img-container");
-
-        if(x % 2){
-            div_container.classList.add('bg-color-black');
-            div_container.append(div_text);
-            div_container.append(div_img)
-        }else{
-            div_container.classList.add('bg-color-white');
-            div_container.append(div_img)
-            div_container.append(div_text);
-        }
-        x++;
+        const lista = document.getElementById("region-list");
+        criarCard(regiao, lista)
     });
+}
+
+async function criarCard(regiao, lista){
+    const div = document.createElement("div");
+    const descricao = await txt_regiao(regiao.name);
+        
+    div.innerHTML = `
+        <a href='/src/views/pokedex.html?regiao=${regiao.name}' class='card-regiao' id='${regiao.name}' > 
+            <div class='img-container-card-regiao'>
+                <img src='/public/images/new/${regiao.name}.png'  alt='Sem Imagem' class='img-card-regiao' />
+            </div>
+            <div class='text-container-card-regiao'>
+                <p class='title-card-regiao' ><b>${regiao.name}</b></p>
+                <p class='description-card-regiao'>
+                    ${descricao}
+                </p>
+            </div>
+        </a>
+    `;
+
+    div.classList.add('div_card_regiao')
+    lista.append(div);
 }
 
 
@@ -54,19 +57,3 @@ async function selectRegioes(){
 
 carregarTemplatesRegioes();
 selectRegioes();
-
-/*
-const regioes = [
-    {id: 1, regiao: 'Kanto'},
-    {id: 2, regiao: 'Johto'},
-    {id: 3, regiao: 'Honn'}
-]
-
-
-const listar_regioes = JSON.stringify(regioes);
-const listar_regioes_parse = JSON.parse(listar_regioes);
-
-console.log(listar_regioes);
-console.log(listar_regioes_parse);
-
-*/

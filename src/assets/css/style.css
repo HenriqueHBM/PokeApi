@@ -1,73 +1,50 @@
 @import url('/src/assets/css/pokedex.css');
+@import url('/src/assets/css/regioes.css');
+@import url('/src/assets/css/footer.css');
+@import url('/src/assets/css/bloco_de_notas.css');
+@import url('/src/assets/css/header.css');
 *{
     margin: 0;
 }
 
 main{
     height: 100%;
+    /* background-image: url("/public/images/teste.jpg"); */
+    /* background-size: contain; */
+    background-color: #132d45;
 }
 .capa_principal{
-    /* A medida vh é igual a 1/100 da altura da viewport
-        se a altura do navegador é 900px, 1vh equivale a 9px
-    */
-    height: 60vh;  
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    background-size: cover;  /*  background opucar todo o espaco */
-    background-image: url('../../../public/images/pokemon.png');
-    background-position: top; /* ajustar a posicao da imagem */
-    background-repeat: no-repeat; /* nao deixar repetir a mesma tbm */
+    height: 50vh;  
+    min-height: 260px;   /* evita ficar muito pequeno em telas grandes */
+    background-image: url('../../../public/images/capa.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 30%;
 }
 
-.bg-color-black{
-    background-color: #161925;
-    color: white;
+:root{
+    --normal-h:#919AA2; --normal-c:#CFCFAD; --normal-b:#E8E8D5;
+    --fire-h:#FF9D55;   --fire-c:#F3B58E;   --fire-b:#FFB57F;
+    --water-h:#5090D6;  --water-c:#A9BEF3;  --water-b:#6FAAE9;
+    --electric-h:#F4D23C;--electric-c:#F1DB6A;--electric-b:#FFDB3FCF;
+    --grass-h:#63BC5A;  --grass-c:#A9D495;  --grass-b:#99C994;
+    --ice-h:#73CEC0;    --ice-c:#BFE6E6;    --ice-b:#9AD7CD;
+    --fighting-h:#8C201B;--fighting-c:#D99895;--fighting-b:#F2D1CF;
+    --poison-h:#B567CE; --poison-c:#D7A8D6; --poison-b:#D98CF1;
+    --ground-h:#D97845; --ground-c:#E4D19A; --ground-b:#E48E61;
+    --flying-h:#89AAE3; --flying-c:#C6DBFECF; --flying-b:#C1B6F5;
+    --psychic-h:#FA7179;--psychic-c:#F7A2BE;--psychic-b:#FF959B;
+    --bug-h:#91C12F;    --bug-c:#D1E089;    --bug-b:#D1FF72CF;
+    --rock-h:#C5B78C;   --rock-c:#D3C58D;   --rock-b:#D2C7A7;
+    --ghost-h:#5269AD;  --ghost-c:#B7AECF;  --ghost-b:#6275ABCF;
+    --dragon-h:#0B6DC3; --dragon-c:#B8A8F4; --dragon-b:#3989CFCF;
+    --dark-h:#5A5465;   --dark-c:#B8AA9E;   --dark-b:#877B9CCF;
+    --steel-h:#5A8EA2;  --steel-c:#CFCFE0;  --steel-b:#8EBACBCF;
+    --fairy-h:#EC8FE6;  --fairy-c:#F0B9D6;  --fairy-b:#E9C6E7CF;
 }
 
-.bg-color-white{
-    background-color: #FDFFFC;
-    color: black;
-}
 
-.container_regiao{
-    margin-bottom: 10px;
-    height: 50vh;
-    display:flex;
-}
-
-.text-container{
-    width: 50%;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    /* border: 2px solid red; */
-    padding: 20px;
-}
-
-.img-container{
-    width: 50%;
-    /* border: 2px solid rgb(164, 104, 104);    */
-    background-image: url('../../../public/images/kanto.png'), linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1));
-    background-size: cover; /* Para cobrir todo o elemento */
-}
-
-.select-region{
-    color: aliceblue;
-    background-color: black;
-    text-align: center;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.3rem;
-}
-
-.text-link-region{
-    color: aliceblue;
-    text-decoration: none;
-}
-
-.text-link-region:hover{
-    text-shadow: 0 0 1px 0 rgb(255, 255, 255), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
-    
+#extends-header{
+    padding: 0;
 }
