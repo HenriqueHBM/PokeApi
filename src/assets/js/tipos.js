@@ -59,53 +59,35 @@ async function carregarTemplateTipos() {
         const params = new URLSearchParams(document.location.search);
         const regiao = params.get("regiao");
 
-        //console.log(await listarPokemonRegiaoTipo(tipo_poke.name));
-
         //declarando variaveis que estao recebendo uma div
         const div_container_tipo = document.createElement('div');
         const div_header_tipo = document.createElement('div');
         const div_body_tipo = document.createElement("div");
-        const btn_prev = document.createElement('button');
-        const btn_next = document.createElement("button");
 
-
-        //passando uma classe para essas variaveis
         div_container_tipo.classList.add('container_tipo');
         div_header_tipo.classList.add("header_tipo", `header_cor_tipo_${tipo_poke.name}`);
         div_body_tipo.classList.add("body_tipo", `body_cor_tipo_${tipo_poke.name}`);
-        btn_prev.classList.add('btn_prev');
-        btn_next.classList.add('btn_next');
-
-        const img_prev = document.createElement('img');
-        const img_next = document.createElement('img');
-        const div_tipo_icon = document.createElement('div');
-
-        img_prev.src = `/public/icons/prev_icon.png`;
-        img_next.src = `/public/icons/next_icon.png`;
-
-        img_prev.classList.add('icon_btn_card')
-        img_next.classList.add('icon_btn_card')
-        btn_prev.classList.add('btn_card');
-        btn_next.classList.add('btn_card');
-        div_tipo_icon.classList.add('div_text_type')
-
-        btn_prev.appendChild(img_prev);
-        btn_next.appendChild(img_next);
-
-        div_tipo_icon.innerHTML = `
-            <div class='icon_tipo'>    
-                <img src='/public/icons/icons_tipo/${tipo_poke.name}.svg' width='35rem' height='35rem' class='img_icon_tipo' />
+        
+        div_header_tipo.innerHTML = `
+            <button class='btn_prev btn_card' id='btn_prev_${tipo_poke.name}'> 
+                <img src='/public/icons/prev_icon.png' class='icon_btn_card' />
+            </button>
+            <div class='div_text_type'>
+                <div class='icon_tipo'>    
+                    <img src='/public/icons/icons_tipo/${tipo_poke.name}.svg' width='35rem' height='35rem' class='img_icon_tipo' />
+                </div>
+                <div class='text_tipo'>${tipo_poke.name} </div>
             </div>
-            <div class='text_tipo'>${tipo_poke.name} <div>
+            <button  class='btn_next btn_card' id='btn_next_${tipo_poke.name}'> 
+                <img src='/public/icons/next_icon.png' class='icon_btn_card' />
+            </button>
         `;
-        //setando um texto para essas variaveis
-        div_header_tipo.append(btn_prev);
-        div_header_tipo.appendChild(div_tipo_icon);
-        div_header_tipo.append(btn_next);
 
         let page = 0;
         const lista_pokemons = await listarPokemonRegiaoTipo(tipo_poke.name, regiao);
         const total_pagina = Math.max(1, Math.ceil(lista_pokemons.length / PAGE_SIZE));
+
+        
         function carregarCards(){
             const ini = page * PAGE_SIZE; // 0
             const fim = ini + PAGE_SIZE;  // 4
@@ -139,6 +121,22 @@ async function carregarTemplateTipos() {
             btn_next.disabled = page >= total_pagina - 1; // caso o total por pagina tenha menos que o contador, desabilita o botao
         }
 
+        //append dessas variaveis
+        lista.append(div_container_tipo);
+        const div_foot_tipo = document.createElement('div');
+        div_foot_tipo.classList.add('footer-tipo', `header_cor_tipo_${tipo_poke.name}`)
+        div_foot_tipo.innerHTML = `
+            <span id='prev_pagination_${tipo_poke.name}'> ${page + 1 } </span>
+            <span>de</span>
+            <span id='next_pagination_${tipo_poke.name}'> ${total_pagina} </span>
+        `;
+        div_container_tipo.append(div_header_tipo, div_body_tipo, div_foot_tipo);
+
+        const btn_prev = document.getElementById(`btn_prev_${tipo_poke.name}`);
+        const btn_next = document.getElementById(`btn_next_${tipo_poke.name}`);
+        carregarCards(); // inicializando a primeira vez
+
+
         btn_prev.addEventListener("click", () => { 
             // caso o contador(no caso), tenha mais que 0, deixa subtrair
             if(page > 0){
@@ -155,18 +153,6 @@ async function carregarTemplateTipos() {
                 document.getElementById(`prev_pagination_${tipo_poke.name}`).innerText = page + 1;
             }
         });
-
-        //append dessas variaveis
-        lista.append(div_container_tipo);
-        const div_foot_tipo = document.createElement('div');
-        div_foot_tipo.classList.add('footer-tipo', `header_cor_tipo_${tipo_poke.name}`)
-        div_foot_tipo.innerHTML = `
-            <span id='prev_pagination_${tipo_poke.name}'> ${page + 1 } </span>
-            <span>de</span>
-            <span id='next_pagination_${tipo_poke.name}'> ${total_pagina} </span>
-        `;
-        div_container_tipo.append(div_header_tipo, div_body_tipo, div_foot_tipo);
-        carregarCards(); // inicializando a primeira vez
     };
 }
 
