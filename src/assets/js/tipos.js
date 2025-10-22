@@ -61,45 +61,52 @@ async function carregarTemplateTipos() {
 
         //declarando variaveis que estao recebendo uma div
         const div_container_tipo = document.createElement('div');
-        const div_header_tipo = document.createElement('div');
-        const div_body_tipo = document.createElement("div");
-
         div_container_tipo.classList.add('container_tipo');
-        div_header_tipo.classList.add("header_tipo", `header_cor_tipo_${tipo_poke.name}`);
-        div_body_tipo.classList.add("body_tipo", `body_cor_tipo_${tipo_poke.name}`);
-        
-        div_header_tipo.innerHTML = `
-            <button class='btn_prev btn_card' id='btn_prev_${tipo_poke.name}'> 
-                <img src='/public/icons/prev_icon.png' class='icon_btn_card' />
-            </button>
-            <div class='div_text_type'>
-                <div class='icon_tipo'>    
-                    <img src='/public/icons/icons_tipo/${tipo_poke.name}.svg' width='35rem' height='35rem' class='img_icon_tipo' />
-                </div>
-                <div class='text_tipo'>${tipo_poke.name} </div>
-            </div>
-            <button  class='btn_next btn_card' id='btn_next_${tipo_poke.name}'> 
-                <img src='/public/icons/next_icon.png' class='icon_btn_card' />
-            </button>
-        `;
 
         let page = 0;
         const lista_pokemons = await listarPokemonRegiaoTipo(tipo_poke.name, regiao);
         const total_pagina = Math.max(1, Math.ceil(lista_pokemons.length / PAGE_SIZE));
 
+        //construcao do container das separacoes por tipo de pokemon
+        div_container_tipo.innerHTML = `
+            <div class='header_tipo header_cor_tipo_${tipo_poke.name}'> 
+                <button class='btn_prev btn_card' id='btn_prev_${tipo_poke.name}'> 
+                    <img src='/public/icons/prev_icon.png' class='icon_btn_card' />
+                </button>
+                <div class='div_text_type'>
+                    <div class='icon_tipo'>    
+                        <img src='/public/icons/icons_tipo/${tipo_poke.name}.svg' width='35rem' height='35rem' class='img_icon_tipo' />
+                    </div>
+                    <div class='text_tipo'>${tipo_poke.name} </div>
+                </div>
+                <button  class='btn_next btn_card' id='btn_next_${tipo_poke.name}'> 
+                    <img src='/public/icons/next_icon.png' class='icon_btn_card' />
+                </button>
+            </div>
+            <div class='body_tipo body_cor_tipo_${tipo_poke.name}' id='body_tipo_${tipo_poke.name}'> 
+
+            </div>
+            <div class='footer-tipo header_cor_tipo_${tipo_poke.name}'> 
+                <span id='prev_pagination_${tipo_poke.name}'> ${page + 1 } </span>
+                <span>de</span>
+                <span id='next_pagination_${tipo_poke.name}'> ${total_pagina} </span>
+            </div>
+        `;
         
         function carregarCards(){
             const ini = page * PAGE_SIZE; // 0
             const fim = ini + PAGE_SIZE;  // 4
             const limit_pokemon_carrossel = lista_pokemons.slice(ini, fim); // lista dos pokemons sendo cortada, ini e fim das qtde a mostrar
 
-            div_body_tipo.innerHTML = "";
+            const card_pokemon = document.getElementById(`body_tipo_${tipo_poke.name}`);
+            //limpando caso ja tenha cards carregados
+            card_pokemon.innerHTML = "";
 
             if(limit_pokemon_carrossel.length == 0){
                 const div_card_vazio = document.createElement('div');
                 div_card_vazio.classList.add("card_tipo_vazio");
-                div_card_vazio.innerText = "SEM POKÉMON'S DESSE TIPO E REGIÃO"
-                div_body_tipo.append(div_card_vazio);
+                div_card_vazio.innerText = "SEM POKÉMON'S DESSA REGIÃO E TIPO"
+                card_pokemon.append(div_card_vazio);
             }else{
                 limit_pokemon_carrossel.forEach(poke => {
                     const card_a = document.createElement("a");
@@ -114,7 +121,7 @@ async function carregarTemplateTipos() {
                             <span class='text-link-card'>${poke.name}</span>
                         </div>
                     `;
-                    div_body_tipo.appendChild(card_a);
+                    card_pokemon.appendChild(card_a);
                 });
             }
             btn_prev.disabled = page == 0; // caso contador esteja com 0 disabilita o botao
@@ -123,19 +130,10 @@ async function carregarTemplateTipos() {
 
         //append dessas variaveis
         lista.append(div_container_tipo);
-        const div_foot_tipo = document.createElement('div');
-        div_foot_tipo.classList.add('footer-tipo', `header_cor_tipo_${tipo_poke.name}`)
-        div_foot_tipo.innerHTML = `
-            <span id='prev_pagination_${tipo_poke.name}'> ${page + 1 } </span>
-            <span>de</span>
-            <span id='next_pagination_${tipo_poke.name}'> ${total_pagina} </span>
-        `;
-        div_container_tipo.append(div_header_tipo, div_body_tipo, div_foot_tipo);
 
         const btn_prev = document.getElementById(`btn_prev_${tipo_poke.name}`);
         const btn_next = document.getElementById(`btn_next_${tipo_poke.name}`);
         carregarCards(); // inicializando a primeira vez
-
 
         btn_prev.addEventListener("click", () => { 
             // caso o contador(no caso), tenha mais que 0, deixa subtrair
