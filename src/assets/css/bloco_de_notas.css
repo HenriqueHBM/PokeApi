@@ -40,8 +40,13 @@ h2{
 .cardpokemon > img{
     height: 35vh;
     width: 100%;
-    border-radius: 50px;
+    border-radius: 20px;
 
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
 }
 
 #card_pokemon{
