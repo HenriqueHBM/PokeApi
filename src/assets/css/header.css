@@ -67,6 +67,7 @@ header .logo a {
     right: 0;
     overflow-y: auto;
     visibility: hidden;
+    scrollbar-width: none;
 }
 
 .link_pokemon{
@@ -79,9 +80,11 @@ header .logo a {
 
 
 .link_pokemon:hover{
-    color: red;
-    background: #d8f5d0;
+    /* color: rgb(152, 0, 0); */
+    background: #d0e6f5;
     cursor: pointer;
+    transform: scale(1.01);
+    transition: transform 200ms ease-in-out;
 }
 
 /* Menu */
