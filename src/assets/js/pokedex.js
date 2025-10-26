@@ -68,7 +68,7 @@ async function carregarTemplateTipos() {
                     card_a.href = `/src/views/pokemon.html?id=${poke.id}`;
                     card_a.innerHTML = `
                         <div class='link-card-img'>
-                            <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke.id}.png' width='100%' height='260rem' style='border-radius: 20px' />
+                            <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke.id}.png' width='100%' height='260rem' style='border-radius: 20px' onerror="this.src='/public/images/img_nao_carregada.png';" />
                         </div>
                         <div class='link-card'>
                             <span class='text-link-card'><b>#${poke.id}</b></span> <br>
