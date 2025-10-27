@@ -3,6 +3,7 @@
 @import url('/src/assets/css/footer.css');
 @import url('/src/assets/css/bloco_de_notas.css');
 @import url('/src/assets/css/header.css');
+@import url('/src/assets/css/pokemon.css');
 *{
     margin: 0;
 }
