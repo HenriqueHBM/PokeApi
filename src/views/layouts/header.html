@@ -1,11 +1,12 @@
 
-    <link rel="stylesheet" href="/src/assets/css/header.css">
-    <link rel="icon" type="image/png" href="/public/icons/pokemon_icon.png">
-    
-    <!--Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+<!--Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+<!-- css principal -->
+<link rel="stylesheet" href="/src/assets/css/style.css">
+
 <header>
     <div class="interface">
 
@@ -15,16 +16,17 @@
             </a>
         </div>
 
-        <section class="teasdf">
-            <input type="text" name="pesquisar" id="pesquisar">
+        <section class="container-pesquisar">
+            <input type="search" name="pesquisar" id="pesquisar">
+            <ul id="lista_pesquisar" ></ul>
         </section>
 
         <section class="menu-desktop">
             <nav>
                 <ul>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/src/views/pokedex.html?regiao=kanto">Pokedex</a></li>
-                    <li><a href="/src/views/bloco_notas.html">Bloco de Notas</a></li>
+                    <li><a class="txt-header-nav" href="/">Inicio</a></li>
+                    <li><a class="txt-header-nav" href="/src/views/pokedex.html?regiao=kanto">Pokedex</a></li>
+                    <li><a class="txt-header-nav" href="/src/views/bloco_notas.html">Bloco de Notas</a></li>
                 </ul>
             </nav>
         </section>

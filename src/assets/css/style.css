@@ -1,74 +1,26 @@
 @import url('/src/assets/css/pokedex.css');
+@import url('/src/assets/css/regioes.css');
+@import url('/src/assets/css/footer.css');
+@import url('/src/assets/css/bloco_de_notas.css');
+@import url('/src/assets/css/header.css');
 *{
     margin: 0;
 }
 
 main{
     height: 100%;
+    /* background-image: url("/public/images/teste.jpg"); */
+    /* background-size: contain; */
+    background-color: #132d45;
 }
 .capa_principal{
-    /* A medida vh é igual a 1/100 da altura da viewport
-        se a altura do navegador é 900px, 1vh equivale a 9px
-    */
-    height: 50vh;  
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    background-size: cover;  /*  background opucar todo o espaco */
-    background-image: url('../../../public/images/pokemon.png');
-    background-position: top; /* ajustar a posicao da imagem */
-    background-repeat: no-repeat; /* nao deixar repetir a mesma tbm */
-}
-
-.bg-color-black{
-    background-color: #161925;
-    color: white;
-}
-
-.bg-color-white{
-    background-color: #FDFFFC;
-    color: black;
-}
-
-.container_regiao{
-    margin-bottom: 10px;
-    height: 40vh;
-    display:flex;
-}
-
-.text-container{
-    width: 50%;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    /* border: 2px solid red; */
-    padding: 20px;
-}
-
-.img-container{
-    width: 50%;
-    /* border: 2px solid rgb(164, 104, 104);    */
-    background-image: url('../../../public/images/kanto.png'), linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1));
-    background-size: cover; /* Para cobrir todo o elemento */
-}
-
-.select-region{
-    color: aliceblue;
-    background-color: black;
-    text-align: center;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.3rem;
-}
-
-.text-link-region{
-    color: aliceblue;
-    text-decoration: none;
-}
-
-.text-link-region:hover{
-    text-shadow: 0 0 1px 0 rgb(255, 255, 255), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    height: 50vh;  
+    min-height: 260px;   /* evita ficar muito pequeno em telas grandes */
+    background-image: url('../../../public/images/capa.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 30%;
 }
 
 :root{

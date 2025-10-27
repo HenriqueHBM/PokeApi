@@ -15,9 +15,10 @@
 }
 
 header {
+    position: relative;
     width: 100%;
     padding: 0;
-    background-color: #FDFFFC;
+    background-color: antiquewhite;
 }
 
 header .interface {
@@ -52,6 +53,40 @@ header .logo a {
     justify-self: center;
 }
 
+#lista_pesquisar {
+    position: absolute;
+    width: 100%;
+    
+    background-color: #f5f5f5;
+    border: none;
+    border-radius:  10px;
+    list-style: none;
+
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    visibility: hidden;
+    scrollbar-width: none;
+}
+
+.link_pokemon{
+    display: block;
+    width: 100%;
+    color: black;
+    text-decoration: none;
+    padding: 5px 20px;
+}
+
+
+.link_pokemon:hover{
+    /* color: rgb(152, 0, 0); */
+    background: #d0e6f5;
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: transform 200ms ease-in-out;
+}
+
 /* Menu */
 header .menu-desktop nav ul {
     /* list-style-type: none;     */
@@ -63,11 +98,19 @@ header .menu-desktop nav ul li {
     margin: 0 10px;
 }
 
-header .menu-desktop nav ul li a {
+
+.txt-header-nav{
     color: black;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
+    letter-spacing: 3px;
+}
+
+.txt-header-nav:hover{
+    color: rgb(152, 0, 0);
+    transform: scale(1.1);
+    transition: transform 200ms ease-in-out;
 }
 
 .menu-desktop{
@@ -84,10 +127,15 @@ header .menu-desktop nav ul li a {
     width: 100%;
 }
 
-.interface .teasdf{
+.interface .container-pesquisar{
     width: 100%;
 }
 
 .logo{
     justify-content: left;
+}
+
+
+.container-pesquisar{
+    position: relative;
 }
