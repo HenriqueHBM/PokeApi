@@ -1,76 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokemonView</title>
     <link rel="icon" type="image/png" href="../../public/icons/pokemon_icon.png">
-    <link rel="stylesheet" href="layouts/header.html">
-    <link rel="stylesheet" href="layouts/footer.html">
-    <link rel="stylesheet" href="../assets/css/pokemon.css">
-
-    <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/assets/css/style.css">
 </head>
+
 <body>
     <section id="extends-header"></section>
 
     <main class="pokemon-detalhes">
-        <div class="container">
-            <div class="col-esquerda">
-                <div class="pokemon-img">
-                    <img id="pokemon-img" src="../../public/images/bulbassauroprateste.jpg" alt="bulbassauroprateste">
+        <div class="container-principal">
+            <div class="container">
+                <div class="col-esquerda">
+                    <div class="pokemon-img">
+                        <img id="pokemon-img" src="../../public/images/bulbassaurparateste.png"
+                            alt="bulbassauroprateste">
+                    </div>
+
+                    <div class="pokemon-tipos">
+                        <span class="tipo" style="background: var(--grass-b)">Planta</span>
+                        <span class="tipo" style="background: var(--poison-h)">Veneno</span>
+                    </div>
                 </div>
 
-                <div class="pokemon-tipos">
-                    <span class="tipo" style="background: var(--grass-b)">Planta</span>
-                    <span class="tipo" style="background: var(--poison-h)">Veneno</span>
+                <div class="col-direita">
+                    <div class="pokemon-header">
+                        <div class="nome-e-numero">
+                            <h1 id="pokemon-nome">Bulbassaur</h1>
+                            <span class="numero">#001</span>
+                        </div>
+                        <button id="salvar-btn" class="btn-salvar">Salvar</button>
+                    </div>
+
+                    <div class="descricao">
+                        <h2>Descrição</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis
+                            nostrud
+                            exercitation ullamco laborisLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim
+                            ad minim veniam, quis
+                            nostrud
+                            exercitation ullamco laboris.</p>
+                    </div>
+
+                    <div class="detalhes">
+                        <h2>Detalhes</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis
+                            nostrud
+                            exercitation ullamco laborisLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim
+                            ad minim veniam, quis
+                            nostrud
+                            exercitation ullamco laborisLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim
+                            ad minim veniam, quis
+                            nostrud
+                            exercitation ullamco laborisLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim
+                            ad minim veniam, quis
+                            nostrud
+                            exercitation ullamco laboris.</p>
+                    </div>
                 </div>
+
+            </div>
+
+            <!-- Seção das evoluções -->
+            <section class="evolucoes">
+                <h2>Evoluções</h2>
+                <div class="linha-evolucao">
+                    <div class="evolucao">
+                        <img src="../../public/images/bulbassaurparateste.png" alt="evolucao1">
+                        <p>Bulbassaur</p>
+                    </div>
+                    <span class="seta">→</span>
+                    <div class="evolucao">
+                        <img src="../../public/images/bulbassaurparateste.png" alt="evolucao1">
+                        <p>Bulbassaur</p>
+                    </div>
+                    <span class="seta">→</span>
+                    <div class="evolucao">
+                        <img src="../../public/images/bulbassaurparateste.png" alt="evolucao1">
+                        <p>Bulbassaur</p>
+                    </div>
+                </div>
+            </section>
         </div>
-
-            <div class="col-direita">
-                <div class="pokemon-header">
-                    <h1 id="pokemon-nome">Bulbassaur</h1>
-                    <button id="salva-btn" class="btn-salvar">Salvar</button>
-                </div>
-
-                <div class="descricao">
-                    <h2>Descrição</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                </div>
-
-                <div class="detalhes">
-                    <h2>Detalhes</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                </div>
-            </div>
-
-        <!-- Seção das evoluções -->
-        <section class="evolucoes">
-            <h2>Evoluções</h2>
-            <div class="linha-evolucao">
-                <div class="evolucao">
-                    <img src="../../public/images/bulbassauroprateste.jpg" alt="evolucao1">
-                    <p>Bulbassaur</p>
-                </div>
-                <span class="seta">→</span>
-                <div class="evolucao">
-                    <img src="../../public/images/bulbassauroprateste.jpg" alt="evolucao1">
-                    <p>Bulbassaur</p>
-                </div>
-                <span class="seta">→</span>
-                <div class="evolucao">
-                    <img src="../../public/images/bulbassauroprateste.jpg" alt="evolucao1">
-                    <p>Bulbassaur</p>
-                </div>
-            </div>
-            </div>
-        </section>
     </main>
 
     <section id="extends-footer"></section>
-    <script src="../app.js"></script>
+    <script type="module" src="../app.js"></script>
 </body>
+
 </html>
