@@ -36,10 +36,10 @@ function carregarNotas(poke) {
     const pName = document.createElement('p');
     pName.textContent = pokemon.name;
 
-    const descricao = document.createElement('textarea');
-    descricao.innerHTML = ` <textarea name="comentario" id="comentario" rows="4" cols="50" placeholder="Digite seus comentarios aqui"><!--rows de linha e cols de coluna--></textarea>`;
+    //const descricao = document.createElement('textarea');
+    //descricao.innerHTML = ` <textarea name="comentario" id="comentario" rows="4" cols="50" placeholder="Digite seus comentarios aqui"><!--rows de linha e cols de coluna--></textarea>`;
 
-    texto.appendChild(descricao);
+    //texto.appendChild(descricao);
     texto.appendChild(pId);
     texto.appendChild(pName);
 
