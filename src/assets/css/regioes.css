@@ -16,7 +16,8 @@
 }
 
 .div_card_regiao{
-    width: 30%;
+    min-width: 40vh;
+    max-width: 60vh;
     border-radius: 20px;
     margin-bottom: 2%;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.418), 0 6px 20px 0 rgba(0, 0, 0, 0.418);
