@@ -9,10 +9,15 @@
     outline: none;
     border: none;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.418), 0 6px 20px 0 rgba(0, 0, 0, 0.418);
+    font-size: 1.7rem;
+}
+
+#input_select_region * {
+    font-size: 0.9rem;
 }
 
 #tipo-list{
-    padding: 2vh 3vh;
+    padding: 50px 100px;
 }
 
 .container_tipo{

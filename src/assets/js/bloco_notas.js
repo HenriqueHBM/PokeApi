@@ -20,6 +20,7 @@ function carregarNotas(poke) {
     const link = document.createElement('a');
     link.href = `/src/views/pokemon.html?id=${pokemon.id}`;
 
+    //link.classList.add('card_pokemon');
     const card = document.createElement('div');
     card.classList.add('cardpokemon');
 
