@@ -1,12 +1,40 @@
-const pokemon = {
-    numeracao:'025',  nome: 'Pikachu', descricao: 'When it is angered, it immediately discharges the energy stored in the pouches in its cheeks.',
-    detalhes: 'Pikachu are small, and cute mouse-like Pokémon. They are almost completely covered by yellow fur. They have long yellow ears that are tipped with black.',
-    tipos: [{tipo : 'elétrico'}], evolucoes: [{evo:'Raichu'}], pre_evolucao:[{pre: 'Pichu'}],
-    salvar: 0 // boolean(0 => false, 1 => true)
+import { first_letter_up } from '/src/app.js';
+
+async function info_pokemon(id){
+    return await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        .then(resp => resp.json());
 }
 
-const listar_pokemon = JSON.stringify(pokemon);
-const listar_pokemon_parse = JSON.parse(listar_pokemon);
+async function carregarPokemon(){
+    const params = new URLSearchParams(document.location.search);
+    const id_pokemon = params.get('id');
 
-console.log(listar_pokemon);
-console.log(listar_pokemon_parse);
+    const pokemon = await info_pokemon(id_pokemon);
+    
+    document.getElementById('pokemon-nome').innerText = first_letter_up(pokemon.name);
+    document.getElementById('pokemon_numero').innerText = "#"+id_pokemon;
+    document.getElementById('pokemon-img').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id_pokemon}.png`
+
+    formata_tipos(pokemon.types);
+    const descricao = await info_descricao(id_pokemon);
+    document.getElementById('pokemon_descricao').innerText = (descricao.flavor_text_entries[0].flavor_text.replace(/\n/g, ' '));
+    
+}
+
+function formata_tipos(tipos){
+    const lista_tipos = document.getElementById('pokemon_tipos');
+    tipos.forEach(element => {
+        let tipo = document.createElement('span');
+        tipo.classList.add(`tipo`);
+        tipo.style = `background: var(--${element.type.name}-c); border-color:var(--${element.type.name}-b)`;
+        tipo.innerText = first_letter_up(element.type.name);
+        lista_tipos.appendChild(tipo)
+    });
+}
+
+function info_descricao(id){
+    return fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
+        .then(resp => resp.json());
+}
+
+carregarPokemon();
