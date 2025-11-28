@@ -19,6 +19,8 @@ async function carregarPokemon(){
     const descricao = await info_descricao(id_pokemon);
     document.getElementById('pokemon_descricao').innerText = (descricao.flavor_text_entries[0].flavor_text.replace(/\n/g, ' '));
     
+
+    base_statics(pokemon.stats);
 }
 
 function formata_tipos(tipos){
@@ -35,6 +37,26 @@ function formata_tipos(tipos){
 function info_descricao(id){
     return fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
         .then(resp => resp.json());
+}
+
+function base_statics(stats){
+    const base_stats = document.getElementById('base_stats');
+    let soma_total = 0;
+    stats.forEach(element => {
+        let porcent_stats = (element.base_stat * 100) / 255;
+        soma_total += element.base_stat;
+        
+        const barra = document.createElement('div');
+        barra.classList.add('container-base-static');
+        barra.innerHTML = `
+            <h5 style='width:20%; text-align: end; '   class='name_stats'> ${first_letter_up(element.stat.name)} </h5>
+            <h5 style='width:8%;  text-align: center;' class='name_stats'> ${(element.base_stat)} </h5>
+            <div class='bar' style="--value:${porcent_stats}%;" > </div>
+        `;
+        base_stats.appendChild(barra);
+    });
+
+    document.getElementById('total_stats').innerText = soma_total;
 }
 
 carregarPokemon();
