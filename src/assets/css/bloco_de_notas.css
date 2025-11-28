@@ -1,14 +1,7 @@
-body{
-    margin: 0%;
-    padding: 0%;
-    background-color: #3C5AA6;
-}
-
 
 .minha-pokedex{
+    padding: 8px;
     background-color: #D9D9D9;
-    margin: 2rem 0 0 2rem;
-    padding: 0.5rem;
     max-width: 18rem;
     border-radius: 5rem;
     display: flex;
@@ -24,19 +17,19 @@ body{
 }
 
 .cardpokemon{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     height: 45vh;
     width: 45vh;
-    margin: 2rem;
-    margin-inline-end: 15px;
+    margin:  10px 0;
     border-radius: 20px;
-    padding: 0%;
-    background-color: bisque;
+    background-color: #E9ECF5;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
+
+.cardpokemon:hover{
+    transform: scale(1.03);
+    transition: transform 200ms ease-in-out;
+}
+
 .cardpokemon > img{
     height: 35vh;
     width: 100%;
@@ -44,12 +37,18 @@ body{
 
 }
 
-a{
+#card_pokemon > * {
     text-decoration: none;
     color: inherit;
 }
 
 #card_pokemon{
+    padding: 15px 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#main_bloco_notas{
+    padding: 50px 100px;
 }

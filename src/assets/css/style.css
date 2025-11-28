@@ -49,3 +49,94 @@ main{
 #extends-header{
     padding: 0;
 }
+
+
+/* NORMAL */
+.header_cor_tipo_normal{ background-color: var(--normal-h); }
+.card_cor_tipo_normal{   background-color: var(--normal-c); }
+.body_cor_tipo_normal{   background-color: var(--normal-b); }
+
+/* FIRE */
+.header_cor_tipo_fire{ background-color: var(--fire-h); }
+.card_cor_tipo_fire{   background-color: var(--fire-c); }
+.body_cor_tipo_fire{   background-color: var(--fire-b); }
+
+/* WATER */
+.header_cor_tipo_water{ background-color: var(--water-h); }
+.card_cor_tipo_water{   background-color: var(--water-c); }
+.body_cor_tipo_water{   background-color: var(--water-b); }
+
+/* ELECTRIC */
+.header_cor_tipo_electric{ background-color: var(--electric-h); }
+.card_cor_tipo_electric{   background-color: var(--electric-c); }
+.body_cor_tipo_electric{   background-color: var(--electric-b); }
+
+/* GRASS */
+.header_cor_tipo_grass{ background-color: var(--grass-h); }
+.card_cor_tipo_grass{   background-color: var(--grass-c); }
+.body_cor_tipo_grass{   background-color: var(--grass-b); }
+
+/* ICE */
+.header_cor_tipo_ice{ background-color: var(--ice-h); }
+.card_cor_tipo_ice{   background-color: var(--ice-c); }
+.body_cor_tipo_ice{   background-color: var(--ice-b); }
+
+/* FIGHTING */
+.header_cor_tipo_fighting{ background-color: var(--fighting-h); }
+.card_cor_tipo_fighting{   background-color: var(--fighting-c); }
+.body_cor_tipo_fighting{   background-color: var(--fighting-b); }
+
+/* POISON */
+.header_cor_tipo_poison{ background-color: var(--poison-h); }
+.card_cor_tipo_poison{   background-color: var(--poison-c); }
+.body_cor_tipo_poison{   background-color: var(--poison-b); }
+
+/* GROUND */
+.header_cor_tipo_ground{ background-color: var(--ground-h); }
+.card_cor_tipo_ground{   background-color: var(--ground-c); }
+.body_cor_tipo_ground{   background-color: var(--ground-b); }
+
+/* FLYING */
+.header_cor_tipo_flying{ background-color: var(--flying-h); }
+.card_cor_tipo_flying{   background-color: var(--flying-c); }
+.body_cor_tipo_flying{   background-color: var(--flying-b); }
+
+/* PSYCHIC */
+.header_cor_tipo_psychic{ background-color: var(--psychic-h); }
+.card_cor_tipo_psychic{   background-color: var(--psychic-c); }
+.body_cor_tipo_psychic{   background-color: var(--psychic-b); }
+
+/* BUG */
+.header_cor_tipo_bug{ background-color: var(--bug-h); }
+.card_cor_tipo_bug{   background-color: var(--bug-c); }
+.body_cor_tipo_bug{   background-color: var(--bug-b); }
+
+/* ROCK */
+.header_cor_tipo_rock{ background-color: var(--rock-h); }
+.card_cor_tipo_rock{   background-color: var(--rock-c); }
+.body_cor_tipo_rock{   background-color: var(--rock-b); }
+
+/* GHOST */
+.header_cor_tipo_ghost{ background-color: var(--ghost-h); }
+.card_cor_tipo_ghost{   background-color: var(--ghost-c); }
+.body_cor_tipo_ghost{   background-color: var(--ghost-b); }
+
+/* DRAGON */
+.header_cor_tipo_dragon{ background-color: var(--dragon-h); }
+.card_cor_tipo_dragon{   background-color: var(--dragon-c); }
+.body_cor_tipo_dragon{   background-color: var(--dragon-b); }
+
+/* DARK */
+.header_cor_tipo_dark{ background-color: var(--dark-h); }
+.card_cor_tipo_dark{   background-color: var(--dark-c); }
+.body_cor_tipo_dark{   background-color: var(--dark-b); }
+
+/* STEEL */
+.header_cor_tipo_steel{ background-color: var(--steel-h); }
+.card_cor_tipo_steel{   background-color: var(--steel-c); }
+.body_cor_tipo_steel{   background-color: var(--steel-b); }
+
+/* FAIRY */
+.header_cor_tipo_fairy{ background-color: var(--fairy-h); }
+.card_cor_tipo_fairy{   background-color: var(--fairy-c); }
+.body_cor_tipo_fairy{   background-color: var(--fairy-b); }

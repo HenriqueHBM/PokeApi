@@ -11,3 +11,6 @@ fetch("/src/views/layouts/footer.html")
         .then(res => res.text())
         .then(data => document.getElementById('extends-footer').innerHTML = data);
 
+export function first_letter_up(text){
+        return  text.slice(0, 1).toUpperCase() + text.slice(1);
+} 

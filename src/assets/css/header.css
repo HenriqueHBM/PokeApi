@@ -9,16 +9,18 @@
     /* max-width: 1440px; */
     /* margin: 0 auto; */
     width: 100%;
-    padding: 5px 10px;
+    padding: 5px 0;
     display: flex;
     align-items: center;
 }
 
 header {
-    position: relative;
     width: 100%;
-    padding: 0;
+    height: 5rem;
+    padding: 0 100px;
     background-color: antiquewhite;
+    display: flex;
+    align-items: center;
 }
 
 header .interface {
@@ -51,6 +53,7 @@ header .logo a {
     background-position: 15px center;
 
     justify-self: center;
+    /*box-shadow: 0 0 20px 0.5px rgba(0, 0, 0, 0.192), 0 6px 20px 0 rgba(0, 0, 0, 0.182); */
 }
 
 #lista_pesquisar {
@@ -87,23 +90,13 @@ header .logo a {
     transition: transform 200ms ease-in-out;
 }
 
-/* Menu */
-header .menu-desktop nav ul {
-    /* list-style-type: none;     */
-    text-align: right;
-}
-
-header .menu-desktop nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
 
 
 .txt-header-nav{
     color: black;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     letter-spacing: 3px;
 }
 
@@ -114,16 +107,17 @@ header .menu-desktop nav ul li {
 }
 
 .menu-desktop{
-    display: flex;
-    justify-content: center;
     width: 100%;
+    padding-left:50px;
+}
+
+.menu-ul-desktop{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
 }
 
 .interface .logo{
-    width: 100%;
-}
-
-.interface .menu-desktop{
     width: 100%;
 }
 

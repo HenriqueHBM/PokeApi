@@ -2,11 +2,13 @@
     color: aliceblue;
     background-color: rgb(9, 15, 45);
     text-align: center;
-    padding: 20px;
     display: flex;
-    justify-content: space-between;
-    font-size: 1.3rem;
+    justify-content: space-around;
+    font-size: 1.5rem;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.418), 0 6px 20px 0 rgba(0, 0, 0, 0.418);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 100px;
 }
 
 .card-regiao{
@@ -16,20 +18,21 @@
 }
 
 .div_card_regiao{
-    width: 30%;
+    width: 55vh;
+    min-height: 40vh;
+    max-height: 60vh;
     border-radius: 20px;
     margin-bottom: 2%;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.418), 0 6px 20px 0 rgba(0, 0, 0, 0.418);
     padding: 1.5%;
     text-align: center;
-    height: 100%;
     background-color: antiquewhite;
 }
 
 #region-list{
     display: flex;
     flex-wrap: wrap;
-    padding: 2% 5%;
+    padding: 30px 100px;
     justify-content: space-between;
 
 }
@@ -51,14 +54,12 @@
 }
 
 .title-card-regiao{
-    margin-top: 2%;
-    margin-bottom: 3%;
     text-transform: uppercase;
+    font-size: 1.3rem;
 }
 
 .description-card-regiao{
-    font-size: 1.1rem;
-    letter-spacing: 2px;
+    font-size: 1.2rem;
 }
 
 
@@ -76,6 +77,8 @@
 }
 
 .text-link-region{
+    width: 8%;
+    margin-inline: 10px 30px;
     color: aliceblue;
     text-decoration: none;
 }

@@ -9,15 +9,19 @@
     outline: none;
     border: none;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.418), 0 6px 20px 0 rgba(0, 0, 0, 0.418);
+    font-size: 1.7rem;
+}
+
+#input_select_region * {
+    font-size: 0.9rem;
 }
 
 #tipo-list{
-    padding: 3% 10%;
+    padding: 50px 100px;
 }
 
 .container_tipo{
-    margin-bottom: 2%;
-    background-color: rgba(197, 197, 197, 0.891);
+    margin-bottom: 3%;
     border-radius: 20px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.418), 0 6px 20px 0 rgba(0, 0, 0, 0.418);
 }
@@ -34,7 +38,6 @@
 }
 
 .header_tipo{
-    background-color: rgb(24, 68, 30);
     color: white;
     justify-content: center;
     text-transform: uppercase;
@@ -43,13 +46,14 @@
     align-items: center;
     justify-content: space-between;
     border-radius: 20px 20px 0 0;
+    height: 12vh;
+    font-size: 2.2vh;
 }
 
 .body_tipo{
     padding: 20px 5px;
     display: flex;
     justify-content: space-evenly;
-    
 }
 
 .card_pokemon > * {
@@ -58,19 +62,21 @@
     text-transform: uppercase;
     border-radius: 20px
 }
-.card_pokemon {
-    display: block;
-}
+
+
 
 .link-card{
     margin-top: 5px;
     color: black;
     height: 20%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card_pokemon{
     height: 100%;
-    width: 20%;
+    width: 40vh;
     margin-inline: 15px;
     border-radius: 20px;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -134,7 +140,7 @@ main {
 } 
 
 .text-link-card{
-    font-size: 1rem;
+    font-size: 2.3rem;
     letter-spacing: 2px;
 }
 
@@ -143,98 +149,18 @@ main {
 }
 
 .footer-tipo{
+    display: flex;
+    justify-content: center;
     text-align: center;
     padding: 0.7%;
     border-radius: 0 0 20px 20px;
     color: white;
+    min-height: 8vh;
+    max-height: 12vh;
+    font-size: 2.3vh;
+    align-items: center;
 }
 
-/* NORMAL */
-.header_cor_tipo_normal{ background-color: var(--normal-h); }
-.card_cor_tipo_normal{   background-color: var(--normal-c); }
-.body_cor_tipo_normal{   background-color: var(--normal-b); }
-
-/* FIRE */
-.header_cor_tipo_fire{ background-color: var(--fire-h); }
-.card_cor_tipo_fire{   background-color: var(--fire-c); }
-.body_cor_tipo_fire{   background-color: var(--fire-b); }
-
-/* WATER */
-.header_cor_tipo_water{ background-color: var(--water-h); }
-.card_cor_tipo_water{   background-color: var(--water-c); }
-.body_cor_tipo_water{   background-color: var(--water-b); }
-
-/* ELECTRIC */
-.header_cor_tipo_electric{ background-color: var(--electric-h); }
-.card_cor_tipo_electric{   background-color: var(--electric-c); }
-.body_cor_tipo_electric{   background-color: var(--electric-b); }
-
-/* GRASS */
-.header_cor_tipo_grass{ background-color: var(--grass-h); }
-.card_cor_tipo_grass{   background-color: var(--grass-c); }
-.body_cor_tipo_grass{   background-color: var(--grass-b); }
-
-/* ICE */
-.header_cor_tipo_ice{ background-color: var(--ice-h); }
-.card_cor_tipo_ice{   background-color: var(--ice-c); }
-.body_cor_tipo_ice{   background-color: var(--ice-b); }
-
-/* FIGHTING */
-.header_cor_tipo_fighting{ background-color: var(--fighting-h); }
-.card_cor_tipo_fighting{   background-color: var(--fighting-c); }
-.body_cor_tipo_fighting{   background-color: var(--fighting-b); }
-
-/* POISON */
-.header_cor_tipo_poison{ background-color: var(--poison-h); }
-.card_cor_tipo_poison{   background-color: var(--poison-c); }
-.body_cor_tipo_poison{   background-color: var(--poison-b); }
-
-/* GROUND */
-.header_cor_tipo_ground{ background-color: var(--ground-h); }
-.card_cor_tipo_ground{   background-color: var(--ground-c); }
-.body_cor_tipo_ground{   background-color: var(--ground-b); }
-
-/* FLYING */
-.header_cor_tipo_flying{ background-color: var(--flying-h); }
-.card_cor_tipo_flying{   background-color: var(--flying-c); }
-.body_cor_tipo_flying{   background-color: var(--flying-b); }
-
-/* PSYCHIC */
-.header_cor_tipo_psychic{ background-color: var(--psychic-h); }
-.card_cor_tipo_psychic{   background-color: var(--psychic-c); }
-.body_cor_tipo_psychic{   background-color: var(--psychic-b); }
-
-/* BUG */
-.header_cor_tipo_bug{ background-color: var(--bug-h); }
-.card_cor_tipo_bug{   background-color: var(--bug-c); }
-.body_cor_tipo_bug{   background-color: var(--bug-b); }
-
-/* ROCK */
-.header_cor_tipo_rock{ background-color: var(--rock-h); }
-.card_cor_tipo_rock{   background-color: var(--rock-c); }
-.body_cor_tipo_rock{   background-color: var(--rock-b); }
-
-/* GHOST */
-.header_cor_tipo_ghost{ background-color: var(--ghost-h); }
-.card_cor_tipo_ghost{   background-color: var(--ghost-c); }
-.body_cor_tipo_ghost{   background-color: var(--ghost-b); }
-
-/* DRAGON */
-.header_cor_tipo_dragon{ background-color: var(--dragon-h); }
-.card_cor_tipo_dragon{   background-color: var(--dragon-c); }
-.body_cor_tipo_dragon{   background-color: var(--dragon-b); }
-
-/* DARK */
-.header_cor_tipo_dark{ background-color: var(--dark-h); }
-.card_cor_tipo_dark{   background-color: var(--dark-c); }
-.body_cor_tipo_dark{   background-color: var(--dark-b); }
-
-/* STEEL */
-.header_cor_tipo_steel{ background-color: var(--steel-h); }
-.card_cor_tipo_steel{   background-color: var(--steel-c); }
-.body_cor_tipo_steel{   background-color: var(--steel-b); }
-
-/* FAIRY */
-.header_cor_tipo_fairy{ background-color: var(--fairy-h); }
-.card_cor_tipo_fairy{   background-color: var(--fairy-c); }
-.body_cor_tipo_fairy{   background-color: var(--fairy-b); }
+.footer-tipo > * {
+    margin-inline: 0.5vh;
+}
