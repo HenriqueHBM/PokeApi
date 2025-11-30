@@ -16,6 +16,20 @@
         </main>
         <section id="extends-footer"></section>  
         <script type="module" src="/src/app.js"></script>
-        <script src="/src/assets/js/bloco_notas.js" ></script>
+        <script type="module" src="/src/assets/js/bloco_notas.js" ></script>
+        <script>
+            function excluir_salvo(id_pokemon){
+                let lista_salvos = JSON.parse(localStorage.getItem("salvo"));
+                if(lista_salvos.find(element => element.id == id_pokemon)){
+                    lista_salvos = lista_salvos.filter(element => element.id != id_pokemon)
+                    localStorage.setItem("salvo", JSON.stringify(lista_salvos));
+                    window.location.reload();
+                }else{
+                    alert('algo deu errado!');
+                    window.location.reload();
+                }
+            
+            }
+        </script>
 </body>
 </html>

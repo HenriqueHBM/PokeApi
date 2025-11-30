@@ -2,6 +2,7 @@
 //   { id: '1', name: 'bulbasaur', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png' }
 // ];
 
+import { formata_index } from '/src/app.js';
 function carregarNotas(poke) {
 
   const container = document.getElementById('card_pokemon');
@@ -14,42 +15,29 @@ function carregarNotas(poke) {
 
     const link = document.createElement('a');
     link.href = `/src/views/pokemon.html?id=${pokemon.id}`;
+    link.innerHTML = `
+      <div class='cardpokemon'>
+        <img src='${pokemon.image}' alt='${pokemon.name}' />
+        <div class='container_text_bn'> 
+          <p class='text-link-card'>#${formata_index(pokemon.id)}</p>
+          <p class='text-link-card'>${pokemon.name}</p>
 
-    //link.classList.add('card_pokemon');
-    const card = document.createElement('div');
-    card.classList.add('cardpokemon');
-
-    const img = document.createElement('img');
-    img.src = pokemon.image;
-    img.alt = pokemon.name;
-
-    const texto = document.createElement('div');
-    texto.classList.add('texto');
-
-    const pId = document.createElement('p');
-    pId.textContent = `#${pokemon.id}`;
-
-    const pName = document.createElement('p');
-    pName.textContent = pokemon.name;
-
-    //const descricao = document.createElement('textarea');
-    //descricao.innerHTML = ` <textarea name="comentario" id="comentario" rows="4" cols="50" placeholder="Digite seus comentarios aqui"><!--rows de linha e cols de coluna--></textarea>`;
-
-    //texto.appendChild(descricao);
-    texto.appendChild(pId);
-    texto.appendChild(pName);
-
-    card.appendChild(img);
-    card.appendChild(texto);
-
-    link.appendChild(card);
-
+          <button class='excluir_pokemon'
+            onclick="event.stopPropagation(); event.preventDefault(); excluir_salvo(${pokemon.id})">
+            <img src='/public/icons/trash.png' width='5%' />
+            Excluir
+          </button>
+        </div>
+      </div>
+    `;
     container.appendChild(link);
   });
 
 }
 
-carregarNotas(JSON.parse(localStorage.getItem("salvo")))
+
+
+carregarNotas(JSON.parse(localStorage.getItem("salvo")));
 
 /*carregarNotas()
 
