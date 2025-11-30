@@ -75,6 +75,8 @@ function base_statics(stats){
 function cor_barra(valor){
     let porcent_stats = (valor * 100) / 255;
     switch(true){
+        case valor < 30:
+            return `--value:${porcent_stats}%; --color:#c70000d3`;
         case valor < 60:
             return `--value:${porcent_stats}%; --color:#cc4d12dc`;
         case valor < 90 :
