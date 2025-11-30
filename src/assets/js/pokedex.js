@@ -1,6 +1,7 @@
 //Importanto as funcoes do outro arquivo js
 import { tiposPoke } from "./tipos.js"
 import { listarPokemonRegiaoTipo } from "./tipos.js";
+import { formata_index } from '/src/app.js';
 
 const PAGE_SIZE = (window.screen.width >= 600) ? 4 : 1;
 
@@ -72,7 +73,7 @@ async function carregarTemplateTipos() {
                             <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke.id}.png' width='100%' height='100%' style='border-radius: 20px' onerror="this.src='/public/images/img_nao_carregada.png';" />
                         </div>
                         <div class='link-card'>
-                            <span class='text-link-card'><b>#${poke.id}</b></span> <br>
+                            <span class='text-link-card'><b>#${formata_index(poke.id)}</b></span> <br>
                             <span class='text-link-card'>${poke.name}</span>
                         </div>
                     `;

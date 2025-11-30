@@ -1,11 +1,6 @@
-/*const pokemons = [
-  { id: '025', name: 'pikachu', image: '/public/images/pikachu.webp' },
-  { id: '001', name: 'bulbasaur', image: '/public/images/pikachu.webp' },
-  { id: '001', name: 'bulbasaur', image: '/public/images/pikachu.webp' },
-  { id: '001', name: 'bulbasaur', image: '/public/images/pikachu.webp' },
-  { id: '001', name: 'bulbasaur', image: '/public/images/pikachu.webp' }
-  // ...
-];*/
+// const pokemons = [
+//   { id: '1', name: 'bulbasaur', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png' }
+// ];
 
 function carregarNotas(poke) {
 
